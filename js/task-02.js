@@ -7,5 +7,9 @@ const ingredients = [
   "Приправы",
 ];
 
-const addIngredients = document.querySelector("ingredients");
-addIngredients.classlist.add("ingredients");
+const ingredientsArray = ingredients.map((ingredient) => {
+  const ingredientRef = document.createElement('li');
+  ingredientRef.textContent = ingredient;
+  return ingredientRef;
+})
+const show = document.querySelector('#ingredients').append(...ingredientsArray);
