@@ -1,9 +1,10 @@
-const categories = document.querySelectorAll("li.item");
-console.log(`В списке ${categories.length} категории.`);
+const allCategories = document.querySelectorAll(".item");
+console.log(`В списке ${allCategories.length} категории.`);
 
-const categoryName = document.querySelector("li.item");
-console.log("Категория:", categoryName.firstElementChild.textContent);
-console.log(
-  "Количество элементов:",
-  categoryName.lastElementChild.children.length
-);
+const categoryName = [...allCategories]
+  .map(
+    categories => `Категория: ${categories.children[0].textContent}
+Количество элементов: ${categories.children[1].children.length}`
+  )
+  .join("\n");
+console.log(categoryName);

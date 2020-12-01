@@ -10,3 +10,4 @@ function validation() {
     }
 }
 input.addEventListener('blur', validation);
+

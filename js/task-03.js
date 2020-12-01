@@ -16,8 +16,8 @@ const images = [
   },
 ];
 
-const imageList = images.reduce((acc, { url, alt }) =>{ acc += `<li><img src="${url}" alt="${alt}"/></li>`;
+const imageList = images.reduce((acc, { url, alt }) =>{ acc += `<li><img src="${url}" alt="${alt} width = 200 height =150"/></li>`;
 return acc;}, "")
 const imageFindList = document.querySelector('#gallery');
 imageFindList.insertAdjacentHTML('beforeend', imageList);
-
+imageFindList.setAttribute("style", "list-style-type:none; display: flex;");
